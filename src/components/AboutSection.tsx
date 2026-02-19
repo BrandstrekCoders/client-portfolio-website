@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
 import { BookOpen, Users, Award, Presentation } from "lucide-react";
+import SectionHeading from "./SectionHeading";
+import MagicCard from "./ui/MagicCard";
+import Hyperspeed from "./ui/Hyperspeed";
 
 const stats = [
   { icon: BookOpen, value: "15+", label: "Years Experience" },
@@ -16,13 +19,19 @@ const fadeInUp = {
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 lg:py-32 relative">
-      <div className="container mx-auto px-6">
+    <section id="about" className="py-24 lg:py-32 relative overflow-hidden bg-black">
+      {/* Hyperspeed Background */}
+      <div className="absolute inset-0 z-0 opacity-70">
+        <Hyperspeed />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <SectionHeading 
+          title="ABOUT" 
+          subtitle="Get to know"
+        />
+
         <motion.div {...fadeInUp} transition={{ duration: 0.6 }} className="max-w-3xl mx-auto text-center mb-16">
-          <p className="text-primary tracking-widest uppercase text-sm font-medium mb-4">About</p>
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-8">
-            About <span className="gold-text">Arvind</span>
-          </h2>
           <p className="text-secondary-foreground/80 leading-relaxed text-lg mb-6">
             With over 15 years of experience in financial advisory and behavioral wealth coaching, Arvind has helped more than 5,000 individuals and entrepreneurs build disciplined, stress-free financial systems.
           </p>
@@ -38,11 +47,12 @@ const AboutSection = () => {
               key={stat.label}
               {...fadeInUp}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="glass-card rounded-xl p-6 text-center group hover:gold-glow transition-all duration-500"
             >
-              <stat.icon className="w-8 h-8 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
-              <p className="text-3xl font-display font-bold gold-text mb-1">{stat.value}</p>
-              <p className="text-sm text-muted-foreground">{stat.label}</p>
+              <MagicCard className="glass-card rounded-xl p-6 text-center group transition-all duration-500">
+                <stat.icon className="w-8 h-8 text-primary mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                <p className="text-3xl font-display font-bold gold-text mb-1">{stat.value}</p>
+                <p className="text-sm text-muted-foreground">{stat.label}</p>
+              </MagicCard>
             </motion.div>
           ))}
         </div>

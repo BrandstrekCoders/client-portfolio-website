@@ -1,0 +1,42 @@
+<svg width="400" height="600" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- White background -->
+  <rect width="400" height="600" fill="#FFFFFF"/>
+  
+  <!-- Subtle border -->
+  <rect x="10" y="10" width="380" height="580" fill="none" stroke="#E5E7EB" stroke-width="2"/>
+  
+  <!-- Decorative corner elements -->
+  <path d="M 30 30 L 80 30 L 80 35 L 35 35 L 35 80 L 30 80 Z" fill="#10b981"/>
+  <path d="M 370 30 L 320 30 L 320 35 L 365 35 L 365 80 L 370 80 Z" fill="#10b981"/>
+  
+  <!-- Title -->
+  <text x="200" y="160" font-family="serif" font-size="52" font-weight="bold" text-anchor="middle" fill="#1F2937">
+    Smart Money
+  </text>
+  <text x="200" y="220" font-family="serif" font-size="52" font-weight="bold" text-anchor="middle" fill="#1F2937">
+    Habits
+  </text>
+  
+  <!-- Icon/Symbol -->
+  <g transform="translate(200, 300)">
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#10b981" stroke-width="3"/>
+    <text x="0" y="15" font-family="serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#10b981">$</text>
+  </g>
+  
+  <!-- Subtitle -->
+  <text x="200" y="400" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#6B7280">
+    Behavioral Finance Techniques
+  </text>
+  <text x="200" y="430" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#6B7280">
+    for Better Decisions
+  </text>
+  
+  <!-- Author -->
+  <text x="200" y="520" font-family="serif" font-size="24" text-anchor="middle" fill="#374151">
+    Arvind Raman
+  </text>
+  
+  <!-- Decorative bottom corner elements -->
+  <path d="M 30 570 L 80 570 L 80 565 L 35 565 L 35 520 L 30 520 Z" fill="#10b981"/>
+  <path d="M 370 570 L 320 570 L 320 565 L 365 565 L 365 520 L 370 520 Z" fill="#10b981"/>
+</svg>

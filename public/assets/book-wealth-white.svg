@@ -1,0 +1,39 @@
+<svg width="400" height="600" viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- White background -->
+  <rect width="400" height="600" fill="#FFFFFF"/>
+  
+  <!-- Subtle border -->
+  <rect x="10" y="10" width="380" height="580" fill="none" stroke="#E5E7EB" stroke-width="2"/>
+  
+  <!-- Top decorative line -->
+  <line x1="50" y1="80" x2="350" y2="80" stroke="#10b981" stroke-width="2"/>
+  
+  <!-- Title -->
+  <text x="200" y="180" font-family="serif" font-size="56" font-weight="bold" text-anchor="middle" fill="#1F2937">
+    WEALTH
+  </text>
+  <text x="200" y="250" font-family="serif" font-size="40" font-weight="300" text-anchor="middle" fill="#6B7280">
+    Without Noise
+  </text>
+  
+  <!-- Decorative wave element -->
+  <path d="M 80 320 Q 140 300, 200 320 T 320 320" fill="none" stroke="#10b981" stroke-width="3"/>
+  <path d="M 80 340 Q 140 320, 200 340 T 320 340" fill="none" stroke="#10b981" stroke-width="2" opacity="0.6"/>
+  <path d="M 80 360 Q 140 340, 200 360 T 320 360" fill="none" stroke="#10b981" stroke-width="1" opacity="0.4"/>
+  
+  <!-- Subtitle -->
+  <text x="200" y="430" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#6B7280">
+    Simplifying Financial Planning
+  </text>
+  <text x="200" y="460" font-family="sans-serif" font-size="18" text-anchor="middle" fill="#6B7280">
+    in a Distracted World
+  </text>
+  
+  <!-- Author -->
+  <text x="200" y="520" font-family="serif" font-size="24" text-anchor="middle" fill="#374151">
+    Arvind Raman
+  </text>
+  
+  <!-- Bottom decorative line -->
+  <line x1="50" y1="560" x2="350" y2="560" stroke="#10b981" stroke-width="2"/>
+</svg>

@@ -1,0 +1,86 @@
+/* ServicesInfinite.css */
+.services-gallery {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* This might need adjustment if pinned */
+    overflow: hidden;
+    background: hsl(var(--background));
+}
+
+.services-cards {
+    position: absolute;
+    width: 18rem;
+    /* Matched to li width */
+    height: 24rem;
+    /* Matched to li height */
+    top: 58%;
+    /* Moved down to create space between heading and cards */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    margin: 0;
+    perspective: 1000px;
+}
+
+.services-cards li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 18rem;
+    /* Made slightly wider for content */
+    height: 24rem;
+    /* Made taller for content */
+    text-align: center;
+    /* line-height: 18rem; removed so text flows */
+    font-size: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 1rem;
+    background-color: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.services-actions {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    z-index: 50;
+    /* Ensure buttons are clickable */
+}
+
+.services-actions button {
+    padding: 0.5rem 1rem;
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.services-actions button:hover {
+    opacity: 0.9;
+}
+
+.drag-proxy {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

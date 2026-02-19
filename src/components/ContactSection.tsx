@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Mail, MapPin, Phone } from "lucide-react";
+import SectionHeading from "./SectionHeading";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -10,17 +11,11 @@ const fadeInUp = {
 const ContactSection = () => {
   return (
     <section id="contact" className="py-24 lg:py-32 relative">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-      </div>
-
       <div className="container mx-auto px-6">
-        <motion.div {...fadeInUp} transition={{ duration: 0.6 }} className="text-center mb-16">
-          <p className="text-primary tracking-widest uppercase text-sm font-medium mb-4">Contact</p>
-          <h2 className="text-4xl md:text-5xl font-display font-bold">
-            Let's <span className="gold-text">Connect</span>
-          </h2>
-        </motion.div>
+        <SectionHeading 
+          title="CONTACT" 
+          subtitle="Get in touch"
+        />
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Contact info */}

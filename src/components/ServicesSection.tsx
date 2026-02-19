@@ -1,7 +1,15 @@
 import { motion } from "framer-motion";
-import { UserCheck, Briefcase, Building2 } from "lucide-react";
+import { UserCheck, Briefcase, Building2, PiggyBank, TrendingUp, Calculator, LucideIcon } from "lucide-react";
+import SectionHeading from "./SectionHeading";
+import MagicCard from "./ui/MagicCard";
 
-const services = [
+interface Service {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+const services: Service[] = [
   {
     icon: UserCheck,
     title: "One-on-One Wealth Coaching",
@@ -17,48 +25,70 @@ const services = [
     title: "Corporate Financial Literacy Workshops",
     description: "Interactive sessions for organizations to improve employee financial wellness and retention.",
   },
+  {
+    icon: PiggyBank,
+    title: "Retirement Planning",
+    description: "Strategic planning for a secure retirement with optimized savings, investments, and income streams.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Investment Portfolio Management",
+    description: "Expert portfolio diversification and management to maximize returns while minimizing risk exposure.",
+  },
+  {
+    icon: Calculator,
+    title: "Tax Optimization Strategy",
+    description: "Strategic tax planning to minimize liabilities and maximize wealth retention through legal avenues.",
+  },
 ];
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-50px" },
-};
-
 const ServicesSection = () => {
+  // Duplicate services array for seamless loop
+  const duplicatedServices = [...services, ...services];
+
   return (
-    <section id="services" className="py-24 lg:py-32 relative">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-      </div>
-
+    <section id="services" className="py-24 lg:py-32 relative overflow-hidden">
       <div className="container mx-auto px-6">
-        <motion.div {...fadeInUp} transition={{ duration: 0.6 }} className="text-center mb-16">
-          <p className="text-primary tracking-widest uppercase text-sm font-medium mb-4">What I Offer</p>
-          <h2 className="text-4xl md:text-5xl font-display font-bold">
-            <span className="gold-text">Services</span>
-          </h2>
-        </motion.div>
+        <SectionHeading 
+          title="SERVICES" 
+          subtitle="What I Offer"
+        />
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {services.map((service, i) => (
+        <div className="mt-16 relative">
+          {/* Fade overlays */}
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+          
+          {/* Scrolling container */}
+          <div className="overflow-hidden">
             <motion.div
-              key={service.title}
-              {...fadeInUp}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="group glass-card rounded-2xl p-8 hover:gold-glow transition-all duration-500 relative overflow-hidden"
+              className="flex gap-8"
+              animate={{
+                x: [0, -((280 + 32) * services.length)],
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 30,
+                  ease: "linear",
+                },
+              }}
             >
-              {/* Hover gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative z-10 space-y-5">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <service.icon className="w-7 h-7 text-primary" />
-                </div>
-                <h3 className="text-xl font-display font-semibold text-foreground">{service.title}</h3>
-                <p className="text-muted-foreground leading-relaxed text-sm">{service.description}</p>
-              </div>
+              {duplicatedServices.map((service, i) => (
+                <MagicCard
+                  key={i}
+                  className="glass-card rounded-xl p-6 w-[280px] h-[240px] flex flex-col items-center text-center flex-shrink-0"
+                >
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                    <service.icon className="w-7 h-7 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-display font-semibold mb-2 text-foreground">{service.title}</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{service.description}</p>
+                </MagicCard>
+              ))}
             </motion.div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
