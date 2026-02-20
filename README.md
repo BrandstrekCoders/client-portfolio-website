@@ -1,5 +1,5 @@
 # Welcome to your Porfolio project
-version -1.1
+version -1.2
 ## Project info
 
 **URL**: https://Porfolio.dev/projects/REPLACE_WITH_PROJECT_ID
